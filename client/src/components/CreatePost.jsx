@@ -1,38 +1,48 @@
 import React from "react"
-import { posts } from "../App"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function CreatePost(){
     const [title, setTitle] = useState()
     const [content, setContent] = useState()
 
-    function titleInput(event){
-        setTitle(event.target.value)
-    }
+    const navigate = useNavigate()
 
-    function contentInput(event){
-        setContent(event.target.value)
-    }
-
-    function handlePublishBtn(){
-        posts.push({
-            title:title,
-            content:content
+    async function addPostSubmit(newPost){
+        const res = await fetch('http://localhost:3000/posts', {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify(newPost),
         })
-        alert('Submit successful')
-        console.log(posts)
+        return
+    }
+
+    function handlePublishBtn(e){
+        e.preventDefault()
+
+        const newPost={
+            title,
+            content
+        }
+
+        addPostSubmit(newPost)
+        return navigate('/posts')
     }
     
     return(
         <>
-        <section id="create-post">
-            <h2>Create Post</h2>
-            <span>Title :</span>
-            <input type="text" placeholder="post title" id="input-title" value={title} onChange={titleInput}/>
-            <span>Content :</span>
-            <textarea name="content" id="content" placeholder="post content goes here" rows="10" value={content} onChange={contentInput}></textarea>
-            <button id="publish-btn" onClick={handlePublishBtn}>Publish</button>
-        </section>  
+        
+            <form id="create-post" onSubmit={handlePublishBtn}>
+                <h2>Create Post</h2>
+                <span>Title :</span>
+                <input type="text" placeholder="post title" id="input-title" value={title} required onChange={e=>setTitle(e.target.value)}/>
+                <span>Content :</span>
+                <textarea name="content" id="content" placeholder="post content goes here" rows="10" value={content} required onChange={e=>setContent(e.target.value)}></textarea>
+                <button id="publish-btn" type="submit">Publish</button>
+            </form>  
+    
         </>
     )
 }

@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     min-height: 100vh;
@@ -31,6 +32,10 @@ body{
     min-height: 100vh;
     width: 100%;
     overflow: scroll;
+}
+
+#content{
+    padding:10px;
 }
 
 #sidenav{
@@ -74,8 +79,9 @@ body{
     border: 1px solid #0468BF;
     border-radius: 2px;
     color:#f2f2f2;
-    padding:15px 0;
-    font-size: 18px;
+    padding:10px;
+    font-size: 16px;
+    align-self: flex-start;
 }
 
 #publish-btn:hover{
@@ -95,9 +101,27 @@ body{
 .card-image{
     width: 100%;
     height: 150px;
-    background-color: gray;
-    border: 1px solid black;
+    background-color: #222831;
     border-radius: 2px 2px 0px 0px; 
+}
+
+.card-title, .card-content{
+    padding:5px;
+}
+
+.card-btn-read-more{
+    padding:5px;
+    margin: 5px;
+    align-self: flex-end;
+    background-color: #0468BF;
+    border: 1px solid #0468BF;
+    color: #f2f2f2;
+    border-radius: 2px;
+}
+
+.card-btn-read-more:hover{
+    background-color: #0477BF;
+    cursor: pointer ;
 }
 
 #posts{
@@ -106,8 +130,31 @@ body{
     gap: 30px 50px;
     flex-wrap: wrap;
     overflow: scroll;
+    flex-grow: 1;
 }
 
 #input-title {
     padding:10px;
+}
+
+.card-btn-delete{
+    padding:5px;
+    margin: 5px;
+    align-self: flex-end;
+    background-color: #b2bdc7;
+    border: 1px solid #b2bdc7;
+    color: #9b2c2c;
+    border-radius: 2px;
+}
+
+.card-btn-delete:hover{
+    background-color: #9b2c2c;
+    border: 1px solid #9b2c2c;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.card-btn-wrapper{
+    display: flex;
+    justify-content: space-between;
 }
