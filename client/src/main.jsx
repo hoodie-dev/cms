@@ -4,6 +4,7 @@ import App from './App.jsx'
 import CreatePost from "./components/CreatePost.jsx"
 import Posts from "./components/Posts.jsx"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import SinglePost from './components/SinglePost.jsx'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path:"posts",
         element:<Posts />
+      },
+      {
+        path:"posts/:id",
+        element:<SinglePost/>
       }
     ]
   }

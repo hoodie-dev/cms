@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { MdAddCircleOutline } from "react-icons/md"
+import { GrChapterAdd } from "react-icons/gr";
 
 function SideNav(){
     return(
@@ -7,10 +9,10 @@ function SideNav(){
             <nav id="sidenav">
                 <ul>
                     <li>   
-                        <Link to={`createpost`}>Add Post</Link>
+                        <NavLink to={`createpost`}><MdAddCircleOutline size={20}/>Add Post</NavLink>
                     </li>
                     <li>
-                        <Link to={`posts`}>All Posts</Link>
+                        <NavLink to={`posts`}><GrChapterAdd size={20}/> All Posts</NavLink>
                     </li>
                 </ul>
             </nav>
