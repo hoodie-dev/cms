@@ -5,6 +5,7 @@ import CreatePost from "./components/CreatePost.jsx"
 import Posts from "./components/Posts.jsx"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SinglePost from './components/SinglePost.jsx'
+import EditPost from './components/EditPost.jsx'
 
 const router = createBrowserRouter([
   {
@@ -12,16 +13,25 @@ const router = createBrowserRouter([
     element: <App/>,
     children:[
       {
-        path:"createpost",
-        element:<CreatePost/>
+        id:"index",
+        path:"/",
+        element:<Posts />
       },
       {
         path:"posts",
         element:<Posts />
       },
       {
+        path:"createpost",
+        element:<CreatePost/>
+      },
+      {
         path:"posts/:id",
         element:<SinglePost/>
+      },
+      {
+        path:"posts/:id/edit",
+        element:<EditPost />
       }
     ]
   }

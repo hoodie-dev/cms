@@ -1,1 +1,6 @@
 node_modules
+db.json
+main.css
+main.html
+main.js
+.env

@@ -26,7 +26,7 @@ body{
     height: 100%;
 }
 
-#create-post{
+#create-post, #edit-post{
     display: flex;
     flex-direction: column; 
     gap:10px;
@@ -83,11 +83,10 @@ body{
 
 
 .active {
-    background-color: #393e46;
-    
+    background-color: #662d91;
 }
 
-#publish-btn{
+#publish-btn, #save-changes-btn{
     background-color: #0468BF;
     border: 1px solid #0468BF;
     border-radius: 2px;
@@ -97,7 +96,7 @@ body{
     align-self: flex-start;
 }
 
-#publish-btn:hover{
+#publish-btn:hover, #save-changes-btn:hover{
     background-color: #0477BF;
     cursor: pointer ;
 }
@@ -132,6 +131,8 @@ body{
     border: 1px solid #0468BF;
     color: #f2f2f2;
     border-radius: 2px;
+    margin-right: auto;
+    align-self: stretch;
 }
 
 .card-btn-read-more:hover{
@@ -162,6 +163,7 @@ body{
     border-radius: 2px;
 }
 
+
 .card-btn-delete:hover{
     background-color: #9b2c2c;
     border: 1px solid #9b2c2c;
@@ -169,9 +171,27 @@ body{
     cursor: pointer;
 }
 
+.card-btn-edit{
+    padding:5px;
+    margin: 5px;
+  
+    background-color: #b2bdc7;
+    border: 1px solid #b2bdc7;
+    color: black;
+    border-radius: 2px;
+}
+
+.card-btn-edit:hover{
+    background-color: black;
+    border: 1px solid black;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
 .card-btn-wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 #single-post{

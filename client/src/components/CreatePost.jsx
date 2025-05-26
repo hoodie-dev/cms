@@ -9,14 +9,21 @@ function CreatePost(){
     const navigate = useNavigate()
 
     async function addPostSubmit(newPost){
-        const res = await fetch('http://localhost:3000/posts', {
+        try {
+            const res = await fetch('http://localhost:3000/posts', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
             },
             body:JSON.stringify(newPost),
         })
-        return
+        } catch (error) {
+            console.log(err)
+        } finally {
+            return
+        }
+        
+        
     }
 
     function handlePublishBtn(e){

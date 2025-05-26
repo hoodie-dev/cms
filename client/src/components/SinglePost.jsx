@@ -11,7 +11,6 @@ function SinglePost(){
                 const res = await fetch(`http://localhost:3000/posts/${id}`)
                 const data = await res.json()
                 setPost(data)
-                console.log(data)
             } catch (error) {   
                 console.log('error fetching data : ', error)
             }
